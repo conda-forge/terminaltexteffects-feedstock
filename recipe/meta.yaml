@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/terminaltexteffects-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/terminaltexteffects-{{ version }}.tar.gz
   sha256: 1430cb73ba003a04a96b19ae4ba5b37a3faf10eb92c77593da7b697e8113dcb2
 
 build:
@@ -14,15 +14,15 @@ build:
     - tte = terminaltexteffects.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.8.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
 
 test:
   imports:
@@ -32,6 +32,7 @@ test:
     - tte --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ChrisBuilds/terminaltexteffects
