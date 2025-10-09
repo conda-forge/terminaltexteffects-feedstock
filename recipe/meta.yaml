@@ -1,5 +1,5 @@
 {% set name = "terminaltexteffects" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/terminaltexteffects-{{ version }}.tar.gz
-  sha256: 84bfa7eefc4d03ede3b9a9794d26a224df34851534f993df6a237fdb744542ef
+  sha256: d2b04b38f9bc03fc434ac932cabfd4344b35f58a7efd9370a62a2bb1a162fdb8
 
 build:
   entry_points:
