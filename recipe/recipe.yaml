@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: terminaltexteffects
+  version: 0.12.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/terminaltexteffects-${{ version }}.tar.gz
+  sha256: d2b04b38f9bc03fc434ac932cabfd4344b35f58a7efd9370a62a2bb1a162fdb8
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - tte = terminaltexteffects.__main__:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - poetry-core
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - terminaltexteffects
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}
+    script:
+      - tte --help
+
+about:
+  summary: TerminalTextEffects (TTE) is a terminal visual effects engine.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/ChrisBuilds/terminaltexteffects
+  documentation: https://chrisbuilds.github.io/terminaltexteffects/
+
+extra:
+  recipe-maintainers:
+    - thewchan
