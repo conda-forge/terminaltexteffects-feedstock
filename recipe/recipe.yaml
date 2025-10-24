@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: terminaltexteffects
-  version: 0.12.1
+  version: "0.12.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/terminaltexteffects-${{ version }}.tar.gz
-  sha256: d2b04b38f9bc03fc434ac932cabfd4344b35f58a7efd9370a62a2bb1a162fdb8
+  sha256: 4a5eef341d538743e7ac4341cd74d47afc9d0345acdad330ed03fd0a72e41f5f
 
 build:
   number: 0
@@ -23,7 +23,7 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - poetry-core
+    - hatchling
     - pip
   run:
     - python >=${{ python_min }}
