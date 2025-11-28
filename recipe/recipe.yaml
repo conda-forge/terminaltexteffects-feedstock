@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: terminaltexteffects
-  version: "0.12.2"
+  version: "0.14.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/terminaltexteffects-${{ version }}.tar.gz
-  sha256: 4a5eef341d538743e7ac4341cd74d47afc9d0345acdad330ed03fd0a72e41f5f
+  sha256: 6b5a4206d532d10a41121f04ef2a60cccbb076e91552ebe505e45c89021c184f
 
 build:
   number: 0
