@@ -19,6 +19,7 @@ build:
   python:
     entry_points:
       - tte = terminaltexteffects.__main__:main
+      - terminaltexteffects = terminaltexteffects.__main__:main
 
 requirements:
   host:
@@ -39,6 +40,7 @@ tests:
         - python ${{ python_min }}
     script:
       - tte --help
+      - terminaltexteffects --help
 
 about:
   summary: TerminalTextEffects (TTE) is a terminal visual effects engine.
