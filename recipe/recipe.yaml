@@ -13,7 +13,7 @@ source:
   sha256: 213c899ce4b8f7643d2d0568af144e1274e11e4493db9f5b04387bd17c217714
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -37,7 +37,7 @@ tests:
       python_version: ${{ python_min }}.*
   - requirements:
       run:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
       - tte --help
       - terminaltexteffects --help
